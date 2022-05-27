@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+service cloudDrive{
+  rpc createBackupFolder(createFolderRequest) returns (Response) {}
+  rpc uploadFile(updateFileRequest) returns (Response) {}
+  rpc deleteFile(deleteFileRequest) returns (Response) {}
+}
+
+message createFolderRequest{
+  string folder_name = 1;
+}
+message updateFileRequest{
+  string file_name = 1;
+  int32 file_size = 2;
+  bytes file_bytes = 3;
+}
+message deleteFileRequest{
+  string file_name = 1;
+}
+message Response {
+  string response = 1;
+}
