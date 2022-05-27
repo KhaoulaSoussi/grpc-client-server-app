@@ -44,7 +44,7 @@ The business implementation of the methods is similar to the XML/SOAP solution e
 To run the Cloud Drive service, a server process that runs on a specific port is needed. Using the grpc ServerBuilder class, we can build a server, bind it to a port, and add the Cloud Drive Service to it. Finally, we can just start the server using the Server class `start()` method.
 
 7.	Auto-generate python codes     
-Since the client side would be implemented in Python, similarly to the Java provider, we have to generate the necessary python codes for the corresponding client by providing the same schema (i.e., proto file) to the protoc compiler. To do so, we need to run the following two commands:     
+Since the client side would be implemented in Python, similarly to the Java provider, we have to generate the necessary python codes for the corresponding client by providing the same schema (i.e., proto file) to the protoc compiler. To do so, we need to run the following two commands:
 - Install grpcio tools:  `pip3 install grpcio-tools`     
 - Generate Python codes: `python3 -m grpc_tools.protoc -Isrc/main/proto --python_out=src/main/python/ --grpc_python_out=src/main/python/ src/main/proto/cloudDrive.proto`     
 Once running this latter command, two files are generated.    
