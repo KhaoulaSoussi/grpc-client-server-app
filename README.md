@@ -18,7 +18,7 @@ It is worth mentioning that Protocol Buffers use binary serialization instead of
 
 ## Implementation Details
 
-1. Define the schema: cloudDrive.proto   
+1. Define the schema: `cloudDrive.proto`   
 Following the contract-first approach, I started by defining the proto file which consists of the following:
 - The service
 - RPC methods inside the service definition with their request and response types
@@ -48,8 +48,8 @@ Since the client side would be implemented in Python, similarly to the Java prov
 1-	Install grpcio tools:  `pip3 install grpcio-tools`
 2-	Generate Python codes: `python3 -m grpc_tools.protoc -Isrc/main/proto --python_out=src/main/python/ --grpc_python_out=src/main/python/ src/main/proto/cloudDrive.proto`
 Once running this latter command, two files are generated.    
-	cloudDrive_pb2.py    
-	cloudDrive_pb2_grpc.py    
+`cloudDrive_pb2.py`    
+`cloudDrive_pb2_grpc.py`    
 They serve the same purpose as the Java auto-generated files except that these are written in Python for a Python client and a Python server. On client side, we will only use the client stub.
 
 8.	Write Python client    
